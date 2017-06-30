@@ -48,6 +48,8 @@ class AwsS3AdapterFactory implements AdapterFactoryInterface
                         ->scalarNode('directory')->defaultValue('')->end()
                         ->booleanNode('create')->defaultFalse()->end()
                         ->scalarNode('acl')->defaultValue('private')->end()
+                        ->integerNode('size_limit')->defaultValue(5368709120)->end()
+                        ->integerNode('part_size')->defaultValue(5242880)->end()
                     ->end()
                 ->end()
             ->end()
